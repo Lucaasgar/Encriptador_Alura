@@ -8,6 +8,7 @@
     justify-content: space-around;
     align-items: center;
     background-color: #F3F5FC;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -46,6 +47,11 @@
     &::placeholder{
         color: #0A3871
     }
+
+    &:focus {
+        border:none;
+        outline: none;
+    }   
 }
 
 .buttons-div {
@@ -77,12 +83,14 @@ button {
 /* ASIDE */
 
 .stn-right {
-    background-color: orangered;
     min-height: 80vh;
+    width: 400px;
     border-radius: 32px;
-    box-shadow: 0px 24px 32px -8px #00000014;
+    box-shadow: 0px 24px 32px  -8px #00000024;
     padding: 25px 0px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
+
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -122,4 +130,6 @@ button {
     background-color: #D8DFE8;
     color: #0A3871;
     margin-top: 20px;
+    position: absolute;
+    bottom: 32px;
 }
