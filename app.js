@@ -8,12 +8,29 @@
 
 const btnEncriptar = document.getElementById('btn-encriptar');
 const btnDesencriptar = document.getElementById('btn-desencriptar');
-const regex = /^[a-z]+$/;
+const regex = /^[a-z\s]+$/;
+const textArea = document.querySelector('textarea');
+const sol = document.getElementById('sol');
 
 
-function hiddenImg() {
-    document.getElementById('ocultar-muñeco').style.display = 'none';
-    document.getElementById('ocultar-muñeco-texto').style.display = 'none';
+textArea.addEventListener('click', () => {
+    textArea.value= '';
+    document.getElementById('ocultar-muñeco').setAttribute('src', 'Imagenes/Search.png');
+    document.getElementById('titulo-right').textContent = 'Ningún mensaje fue encontrado';
+    document.getElementById('parrafoImg').textContent = 'Ingresa el texto que desees encriptar o desencriptar.';
+})
+
+sol.addEventListener('click', () => {
+    sol.setAttribute('src', 'Imagenes/sun.png');
+    document.getElementById('container').style.backgroundColor = '#000';
+})
+
+function errorImg(){
+    document.getElementById('ocultar-muñeco').setAttribute('src', 'Imagenes/Error.png');
+}
+
+function foundImg(){
+    document.getElementById('ocultar-muñeco').setAttribute('src', 'Imagenes/Launch.png');
 }
 
 function encriptar() {
@@ -27,16 +44,21 @@ function encriptar() {
             .replace(/a/g , 'ai')
             .replace(/o/g, 'ober')
             .replace(/u/g, 'ufat');
-            
-            hiddenImg();
+        
+            foundImg();
+            document.getElementById('titulo-right').textContent = 'El mensaje fue encriptado';
+
             texto.value = textoEncriptado;
         
         }else {
-            alert("No se permiten acentos, caracteres especiales o en mayusculas.");
-        }
+            errorImg();
+            document.getElementById('titulo-right').textContent = 'Ningún mensaje fue encontrado';
+            document.getElementById('parrafoImg').textContent = 'Solo letras minúsculas y sin acento.';
+        }   
     }else {
-        alert("Debes ingresar un texto");
-        
+        errorImg();
+        document.getElementById('titulo-right').textContent = 'Ningún mensaje fue encontrado';
+        document.getElementById('parrafoImg').textContent = 'Debes ingresar un texto.';
     }
     
 }
@@ -52,13 +74,19 @@ function desencriptar() {
             .replace(/ai/g, 'a')
             .replace(/ober/g, 'o')
             .replace(/ufat/g, 'u');
-    
+            
+            foundImg();
+            document.getElementById('titulo-right').textContent = 'El mensaje fue desencriptado';
             texto.value = textoDesencriptado;
         }else {
-            alert("No se permiten acentos, caracteres especiales o en mayusculas.");
+            errorImg();
+            document.getElementById('titulo-right').textContent = 'Ningún mensaje fue encontrado';
+            document.getElementById('parrafoImg').textContent = 'Solo letras minúsculas y sin acento.';
         }
     }else {
-        alert("Debes ingresar algun texto");
+        errorImg();
+        document.getElementById('titulo-right').textContent = 'Ningún mensaje fue encontrado';
+        document.getElementById('parrafoImg').textContent = 'Debes ingresar un texto.';
     }
     
 }

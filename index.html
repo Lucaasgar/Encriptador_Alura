@@ -9,8 +9,9 @@
 </head>
 <body>
 
-    <main class="container">
+    <main id="container">
         <img src="Imagenes/Logo.png" alt="Alura logo" class="logo">
+        <img src="Imagenes/sun-filled.png" alt="Sol lleno." id="sol">
         <section class="section-left">
             <textarea class="area" name="Area" id="input" cols="30" rows="10" required placeholder="Ingrese el texto aqui"></textarea>
             <div class="buttons-div">
@@ -25,10 +26,10 @@
 
         <section class="stn-right" id="right">
             <div class="muñeco-ocultar">
-                <img class="muñeco" src="Imagenes/Muñeco.png" alt="Muñeco" id="ocultar-muñeco">
+                <img class="muñeco" src="Imagenes/Search.png" alt="Muñeco" id="ocultar-muñeco">
                 <div class="muñeco-text" id="ocultar-muñeco-texto">
-                    <h3>Ningún mensaje fue encontrado</h3>
-                    <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                    <h3 id="titulo-right">Ningún mensaje fue encontrado</h3>
+                    <p id="parrafoImg">Ingresa el texto que desees encriptar o desencriptar.</p>
                 </div>
             </div>
             <button id="copy" hidden>Copiar</button>
@@ -36,4 +37,5 @@
     </main>
     <script src="app.js"></script>
 </body>
+
 </html>

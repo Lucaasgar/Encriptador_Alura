@@ -3,13 +3,23 @@
     box-sizing: border-box;
 }
 
-.container {
+#container {
     min-height: 100vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #F3F5FC;
     flex-wrap: wrap;
+}
+
+#sol {
+    background-color: #F3F5FC;
+    position: absolute;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    right: 40px;
+    cursor: pointer;
 }
 
 .logo {
