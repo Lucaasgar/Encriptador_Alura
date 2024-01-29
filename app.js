@@ -53,6 +53,12 @@ function encriptar() {
     
 }
 
+function copiar(){
+    let texto = document.getElementById('input');
+    navigator.clipboard.writeText(texto.value)
+    btnCopy.textContent = 'Copiado!';
+}
+
 function desencriptar() {
     let texto = document.getElementById('input');
 
@@ -82,6 +88,13 @@ function desencriptar() {
 }
 
 let modoClaro = true;
+
+btnCopy.addEventListener('click', () => {
+    copiar();    
+    setTimeout(() => {
+        btnCopy.textContent = 'Copiar';
+    }, 700)
+})
 
 sol.addEventListener('click', () => {
     if(modoClaro){
