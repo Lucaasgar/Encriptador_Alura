@@ -16,13 +16,19 @@ let modoClaro = true;
 sol.addEventListener('click', () => {
     if(modoClaro){
         sol.setAttribute('src', 'Imagenes/moon.png');
+        sol.style.backgroundColor = '#555555';
         document.getElementById('container').style.backgroundColor = '#555555';
         document.getElementById('right').style.backgroundColor = '#777777';
         textArea.style.backgroundColor = '#777777';
+        btnDesencriptar.style.backgroundColor = '#777777';
         modoClaro = false;
     }else {
         sol.setAttribute('src', 'Imagenes/sun.png');
+        sol.style.backgroundColor = '#F3F5FC';
         document.getElementById('container').style.backgroundColor = '#F3F5FC';
+        document.getElementById('right').style.backgroundColor = '#fff';
+        textArea.style.backgroundColor = '#F3F5FC';
+        btnDesencriptar.style.backgroundColor = '#D8DFE8';
         modoClaro = true;
     }
 })
