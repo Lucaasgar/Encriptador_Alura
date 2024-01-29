@@ -11,24 +11,37 @@ const btnDesencriptar = document.getElementById('btn-desencriptar');
 const regex = /^[a-z\s]+$/;
 const textArea = document.querySelector('textarea');
 const sol = document.getElementById('sol');
+const logo = document.getElementById('logo');
 let modoClaro = true;
 
 sol.addEventListener('click', () => {
     if(modoClaro){
-        sol.setAttribute('src', 'Imagenes/moon.png');
-        sol.style.backgroundColor = '#555555';
-        document.getElementById('container').style.backgroundColor = '#555555';
-        document.getElementById('right').style.backgroundColor = '#777777';
-        textArea.style.backgroundColor = '#777777';
-        btnDesencriptar.style.backgroundColor = '#777777';
+        sol.setAttribute('src', 'Imagenes/moon.svg');
+        sol.style.backgroundColor = '#040D12';
+        sol.style.fill = '#5C8374';
+        document.getElementById('container').style.backgroundColor = '#040D12';
+        document.getElementById('right').style.backgroundColor = '#5C8374';
+        logo.style.fill = '#5C8374';
+        textArea.style.backgroundColor = '#5C8374';
+        textArea.style.color = '#040D12';
+        btnDesencriptar.style.backgroundColor = '#5C8374';
+        btnDesencriptar.style.borderColor = '#2D3250';
+        btnDesencriptar.style.color = '#040D12';
+        btnEncriptar.style.backgroundColor = '#5C8374';
+        btnEncriptar.style.color = '#040D12';
         modoClaro = false;
     }else {
         sol.setAttribute('src', 'Imagenes/sun.png');
         sol.style.backgroundColor = '#F3F5FC';
         document.getElementById('container').style.backgroundColor = '#F3F5FC';
         document.getElementById('right').style.backgroundColor = '#fff';
+        logo.style.fill = '#0A3871';
         textArea.style.backgroundColor = '#F3F5FC';
+        textArea.style.color = '#000';
         btnDesencriptar.style.backgroundColor = '#D8DFE8';
+        btnDesencriptar.style.borderColor = '#0A3871';
+        btnEncriptar.style.backgroundColor = '#0A3871';
+        btnEncriptar.style.color = '#fff';
         modoClaro = true;
     }
 })

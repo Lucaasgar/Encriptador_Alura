@@ -22,10 +22,11 @@
     cursor: pointer;
 }
 
-.logo {
+#logo {
+    fill: #0A3871;
     position: absolute;
     top: 20px;
-    left: 10px;
+    left: 40px;
     height: 42px;
 }
 
