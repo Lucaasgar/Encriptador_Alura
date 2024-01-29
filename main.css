@@ -47,6 +47,7 @@
     resize: none;
     border: none;
     cursor: pointer;
+    border-radius: 20px;
 
     font-family: Inter;
     font-size: 32px;

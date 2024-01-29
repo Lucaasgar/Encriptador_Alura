@@ -11,18 +11,27 @@ const btnDesencriptar = document.getElementById('btn-desencriptar');
 const regex = /^[a-z\s]+$/;
 const textArea = document.querySelector('textarea');
 const sol = document.getElementById('sol');
+let modoClaro = true;
 
+sol.addEventListener('click', () => {
+    if(modoClaro){
+        sol.setAttribute('src', 'Imagenes/moon.png');
+        document.getElementById('container').style.backgroundColor = '#555555';
+        document.getElementById('right').style.backgroundColor = '#777777';
+        textArea.style.backgroundColor = '#777777';
+        modoClaro = false;
+    }else {
+        sol.setAttribute('src', 'Imagenes/sun.png');
+        document.getElementById('container').style.backgroundColor = '#F3F5FC';
+        modoClaro = true;
+    }
+})
 
 textArea.addEventListener('click', () => {
     textArea.value= '';
     document.getElementById('ocultar-muñeco').setAttribute('src', 'Imagenes/Search.png');
     document.getElementById('titulo-right').textContent = 'Ningún mensaje fue encontrado';
     document.getElementById('parrafoImg').textContent = 'Ingresa el texto que desees encriptar o desencriptar.';
-})
-
-sol.addEventListener('click', () => {
-    sol.setAttribute('src', 'Imagenes/sun.png');
-    document.getElementById('container').style.backgroundColor = '#000';
 })
 
 function errorImg(){
