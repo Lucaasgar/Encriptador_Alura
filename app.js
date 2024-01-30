@@ -16,7 +16,7 @@ const btnCopy = document.getElementById('copy');
 
 function errorImg(){
     document.getElementById('ocultar-muñeco').setAttribute('src', 'Imagenes/Error.png');
-    btnCopy.setAttribute('hidden');
+    btnCopy.setAttribute('hidden', 'true');
 }
 
 function foundImg(){
@@ -155,8 +155,6 @@ textArea.addEventListener('click', () => {
     document.getElementById('titulo-right').textContent = 'Ningún mensaje fue encontrado';
     document.getElementById('parrafoImg').textContent = 'Ingresa el texto que desees encriptar o desencriptar.';
 })
-
-
 
 btnEncriptar.addEventListener('click', () => {
     encriptar();
